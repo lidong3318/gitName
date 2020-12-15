@@ -1,0 +1,69 @@
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_main.xml	(revision 8cf96e8a6fec3ca25f8bd932d3edd0bc0db8d035)
++++ app/src/main/res/layout/activity_main.xml	(date 1608020531033)
+@@ -1,18 +1,15 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     tools:context=".MainActivity">
+ 
+-    <TextView
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:text="Hello World!"
+-        app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintLeft_toLeftOf="parent"
+-        app:layout_constraintRight_toRightOf="parent"
+-        app:layout_constraintTop_toTopOf="parent" />
++    <ImageView
++        android:id="@+id/img"
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:background="@mipmap/ic_launcher"/>
+ 
+-</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
++</LinearLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/gitname/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/gitname/MainActivity.java	(revision 8cf96e8a6fec3ca25f8bd932d3edd0bc0db8d035)
++++ app/src/main/java/com/example/gitname/MainActivity.java	(date 1608020568993)
+@@ -1,14 +1,23 @@
+ package com.example.gitname;
+ 
+-import androidx.appcompat.app.AppCompatActivity;
+-
+ import android.os.Bundle;
++import android.widget.ImageView;
++
++import androidx.appcompat.app.AppCompatActivity;
+ 
+ public class MainActivity extends AppCompatActivity {
+ 
++    private ImageView img;
++
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_main);
++        initView();
++    }
++
++    private void initView() {
++        img = (ImageView) findViewById(R.id.img);
++
+     }
+ }
+\ No newline at end of file
